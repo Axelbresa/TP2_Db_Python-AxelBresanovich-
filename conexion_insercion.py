@@ -1,5 +1,12 @@
 import MySQLdb
 
+def crear_tabla():
+    db = MySQLdb.connect("127.0.0.1", "root", "", "provincias")
+    cursor = db.cursor()
+    cursor.execute("DROP TABLE IF EXISTS provincias")  # Eliminar la tabla si existe
+    cursor.execute("CREATE TABLE provincias (provincia VARCHAR(255), localidad VARCHAR(255))")
+    db.close()
+
 def insert_data(data):
     db = MySQLdb.connect("127.0.0.1", "root", "", "provincias")
     cursor = db.cursor()
