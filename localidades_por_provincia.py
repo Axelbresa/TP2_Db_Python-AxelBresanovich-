@@ -1,9 +1,9 @@
 import os
-import MySQLdb
 import csv
+from conexion_insercion import conexion_db
 
 def exportar_localidades_por_provincia():
-    db = MySQLdb.connect("127.0.0.1", "root", "", "provincias")
+    db=conexion_db()
     cursor = db.cursor()
 
     # Crear la carpeta si no existe
@@ -33,4 +33,4 @@ def exportar_localidades_por_provincia():
 
     db.close()
 
-# exportar_localidades_por_provincia()
+exportar_localidades_por_provincia()

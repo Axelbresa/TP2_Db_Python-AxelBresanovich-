@@ -1,5 +1,5 @@
 import csv
-import MySQLdb
+from conexion_insercion import conexion_db
 
 def read_csv(csv_file):
     data = []
@@ -9,12 +9,5 @@ def read_csv(csv_file):
             data.append(row)
     return data
 
-def create_table():
-    db = MySQLdb.connect("127.0.0.1", "root", "", "provincias")
-    cursor = db.cursor()
-    cursor.execute("CREATE TABLE IF NOT EXISTS provincias (provincia VARCHAR(255), localidad VARCHAR(255))")
-    db.close()
-
 csv_file = 'localidades.csv'
-data = read_csv(csv_file)
-create_table()
+# data = read_csv(csv_file)
