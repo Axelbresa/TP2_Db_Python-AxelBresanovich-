@@ -1,5 +1,4 @@
 import csv
-from conexion_insercion import conexion_db
 
 def read_csv(csv_file):
     data = []
@@ -10,4 +9,5 @@ def read_csv(csv_file):
     return data
 
 csv_file = 'localidades.csv'
-# data = read_csv(csv_file)
+data = read_csv(csv_file)
+# print(data)

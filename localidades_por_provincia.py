@@ -29,7 +29,7 @@ def exportar_localidades_por_provincia():
             writer.writerow(['Localidad'])
             for localidad in localidades:
                 writer.writerow(localidad)
-        print(f'Archivo CSV "{csv_file}" exportado correctamente para la provincia de {provincia_nombre}')
+    print("archivos csv exportados con exito un total de ", len(provincias), "provincias" )
 
     db.close()
 
